@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Hello {{username}} . . .
+    </h1>
+    <a href="{{url_for('logout')}}"><button>Log Out</button></a>
+    <br>
+    <ul>
+        {% for info in userinfo %}
+            <li><strong>{{ info }}:</strong> {{ userinfo[info] }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <!-- {{repos}} -->
+    <ul>
+        {% for repo in repos %}
+            <li><a href="{{ repo['html_url'] }}">{{ repo['name'] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
